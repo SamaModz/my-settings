@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$palette: (
+  50: #E6E6E6,
+  100: #D4D4D4,
+  200: #C2C2C2,
+  300: #B0B0B0,
+  400: #9E9E9E,
+  500: #8C8C8C,
+  600: #7A7A7A,
+  700: #696969,
+  800: #575757,
+  900: #454545,
+  950: #333333,
+);
+$transparency: rgba(0, 0, 0, 0.25);
+
+@function palette($level) {
+  @if not map-has-key($palette, $level) {
+    @warn "O nível `{$level}` não existe na paleta de cores.";
+  }
+  
+  @return map-get($palette, $level);
+}
+
+::selection {
+  background: palette(500);
+}
+
+.blur {
+  backdrop-filter: blur(.5rem);
+  -webkit-backdrop-filter: blur(.5rem);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110vh;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: palette(950);
+  font-size: 1.6rem;
+  color: palette(100);
+  padding: 1rem;
+  background-image: url('./JVu-Mrpz2-Gk-BX-upscaled-jpeg.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  height: max-content;
+  background: linear-gradient(to left top, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
+  
+  border: .1rem solid palette(700);
+  border-radius: 1rem;
+  gap: .5rem;
+  padding: 1rem;
+  box-shadow: .1rem .1rem 3rem rgba(0, 0, 0, 0.5);
+  
+  .head-btn {
+    position: fixed;
+    right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+  }
+  
+  .user-info {
+    border-radius: .85rem;
+    border: .2rem solid palette(600);
+    padding: 0 .75rem;
+    width: 100%;
+    padding-bottom: 1rem;
+    
+    #user-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      margin: 0 1rem;
+      gap: .35rem;
+      padding: .25rem .5rem;
+      border: none;
+      border-left: .2rem solid palette(600);
+      border-right: .2rem solid palette(600);
+      border-radius: 0.5rem;
+      background: rgba(255, 255, 255, .15);
+    }
+  }
+  
+}
+
+hr {
+  border: none;
+  border-top: .2rem solid palette(700);
+  width: 100%;
+}
+
+.nav {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  left: 1rem;
+  width: calc(100% - 2rem);
+  background: $transparency;
+  backdrop-filter: blur(0.4rem);
+  border: 0.1rem solid palette(600);
+  border-radius: 1rem;
+  z-index: 9999;
+  box-shadow: .1rem .1rem 3rem rgba(0, 0, 0, 0.75);
+  
+  .nav-container {
+    margin: 0;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: palette(100);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+  }
+  
+}
+
+
+svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  stroke: palette(100);
+}
+
+
+.nav-container a:focus {
+  transition: all 1s linear;
+  rotate: 95deg;
+}
+
+#hours {
+  color: palette(150);
+  font-size: 1.3rem;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+}
+
+.terminal {
+  .line {
+    line-height: 1.2;
+  }
+  
+  .keyword {
+    color: #788add;
+    /* Purple for keywords */
+    font-weight: 700;
+  }
+  
+  .string {
+    color: #c3b579;
+    /* Green for strings */
+    font-weight: 700;
+  }
+  
+  .comment {
+    color: #78acdd;
+    /* Gray for comments */
+    font-weight: 700;
+  }
+}
+
+.applications {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  user-select: none;
+  
+}
+
+.lucide {
+  user-select: none;
+}
+
+.lucide.off {
+  stroke: #aaa;
+}
+
+.lucide.on {
+  stroke: #fff;
+}
+
+pre {
+  width: 100%;
+  
+  code {
+    width: 100%;
+    line-height: 1;
+    font-family: "JetBrains Mono";
+    font-weight: 500;
+  }
+}
+
+.fetch {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: max-content;
+  background: linear-gradient(to left top, rgba(255, 255, 255, .2), rgba(0, 255, 255, 0));
+  border: .1rem solid palette(700);
+  border-radius: 1rem;
+  gap: .5rem;
+  padding: 1rem;
+  box-shadow: .1rem .1rem 3rem rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap;
+  
+  .box-image {
+    /* display: block; */
+    overflow: hidden;
+    height: 100%;
+    
+    .image {
+      width: 22rem;
+      border-radius: 1rem;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+  }
+  
+  .fetch-text {
+    display: flex;
+    flex-direction: column;
+    
+    .item {
+      display: flex;
+      gap: .5rem;
+      flex-direction: row;
+      font-family: 'JetBrains Mono';
+    }
+  }
+  
+}
+
+@media(max-width: 40rem) {
+  .fetch {
+    display: flex;
+    align-items: center;
+  }
+  
+  .box-image {
+    width: max-content;
+  }
+}
+
+
+
+$yellow: rgb(249, 226, 175);
+$green: rgb(166, 227, 161);
+$mauve: rgb(203, 166, 247);
+$red: rgb(243, 139, 168);
+$sky: rgb(137, 220, 235);
+$peach: rgb(250, 179, 135);
+$blue: rgb(137, 180, 250);
+$teal: rgb(148, 226, 213);
+$flamingo: rgb(242, 205, 205);
+
+.lucide-laptop {
+  stroke: $green;
+}
+
+.lucide-monitor-cog {
+  stroke: $peach;
+}
+
+.lucide-square-terminal {
+  stroke: $red;
+}
+
+.lucide-swatch-book {
+  stroke: $mauve;
+}
+
+.lucide-person-standing {
+  stroke: $sky;
+}
+
+.lucide-map-pin {
+  stroke: $teal;
+}
+
+.lucide-book-open-text {
+  stroke: $blue;
+}
+
+.lucide-languages {
+  stroke: $yellow;
+}
+
+.lucide-slack {
+  stroke: $flamingo;
+}
+
+pre {
+  overflow: scroll;
+}
+
+.first-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: black;
+  color: palette(100);
+  text-transform: uppercase;
+  padding: .25rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  font-weight: 600;
+}
