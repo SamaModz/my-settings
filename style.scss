@@ -39,6 +39,10 @@ body {
 }
 
 .container {
+  user-select: none;
+}
+
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,6 +54,9 @@ body {
   border: .1rem solid $line-color;
   border-radius: 2rem;
   gap: 2rem;
+  box-shadow:
+    .1rem .1rem 5rem #000,
+    .1rem .1rem 2rem #000;
   
   .image-profile {
     display: flex;
@@ -136,6 +143,9 @@ body {
       color: rgba($color: #999, $alpha: 1);
       text-align: center;
       padding: 0 2rem;
+      span {
+        color: #d17c7c;
+      }
     }
   }
   
@@ -148,7 +158,7 @@ body {
   top: 0;
   left: 0;
   background: $insight-950;
-  background-image: 
+  background-image:
     linear-gradient(to right, $line-color $line-width, transparent $line-width),
     linear-gradient(to bottom, $line-color $line-width, transparent $line-width);
   background-size: $grid-size $grid-size;
@@ -160,6 +170,7 @@ body {
   0% {
     background-position: 0 0;
   }
+  
   100% {
     background-position: 100% 0;
   }
@@ -225,6 +236,12 @@ body {
     right: -20%;
     color: red;
     animation-delay: 1s;
+  }
+  
+  &:nth-child(5) {
+    top: -50%;
+    right: 15%;
+    color: #c0c0c0;
   }
 }
 
