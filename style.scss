@@ -55,8 +55,8 @@ body {
   border-radius: 2rem;
   gap: 2rem;
   box-shadow:
-    .1rem .1rem 5rem #000,
-    .1rem .1rem 2rem #000;
+    .1rem .1rem 5rem #0007,
+    .1rem .1rem 2rem #0007;
   
   .image-profile {
     display: flex;
@@ -143,6 +143,7 @@ body {
       color: rgba($color: #999, $alpha: 1);
       text-align: center;
       padding: 0 2rem;
+      font-size: 1.6rem;
       span {
         color: #d17c7c;
       }
@@ -245,8 +246,13 @@ body {
   }
 }
 
-@media (max-width: 76.5rem) {
+@media (min-width: 76.5rem) {
   .container {
-    width: 40%;
+    width: 80%;
+  }
+}
+@media (min-width: 80rem) {
+  .container {
+    width: 70rem;
   }
 }

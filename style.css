@@ -37,7 +37,7 @@ body {
   border: 0.1rem solid rgba(204, 204, 204, 0.2);
   border-radius: 2rem;
   gap: 2rem;
-  box-shadow: 0.1rem 0.1rem 5rem #000, 0.1rem 0.1rem 2rem #000;
+  box-shadow: 0.1rem 0.1rem 5rem rgba(0, 0, 0, 0.4666666667), 0.1rem 0.1rem 2rem rgba(0, 0, 0, 0.4666666667);
 }
 .container .image-profile {
   display: flex;
@@ -107,6 +107,7 @@ body {
   color: #999999;
   text-align: center;
   padding: 0 2rem;
+  font-size: 1.6rem;
 }
 .container .info-profile p span {
   color: #d17c7c;
@@ -189,9 +190,14 @@ body {
   color: #c0c0c0;
 }
 
-@media (max-width: 76.5rem) {
+@media (min-width: 76.5rem) {
   .container {
-    width: 40%;
+    width: 80%;
+  }
+}
+@media (min-width: 80rem) {
+  .container {
+    width: 70rem;
   }
 }
 
